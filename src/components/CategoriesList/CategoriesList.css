@@ -1,0 +1,10 @@
+.categories-container {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .categories-container {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
