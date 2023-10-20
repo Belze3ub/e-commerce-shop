@@ -1,0 +1,39 @@
+.label-input-group {
+  position: relative;
+  margin: 1rem 0;
+  font-size: 1.1em;
+
+  .form-input {
+    border: none;
+    border-bottom: 2px solid rgb(201, 201, 201);
+    outline: none;
+    padding-top: 1rem;
+    padding-bottom: .2rem;
+    width: 100%;
+    padding-left: 0.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all .3s ease;
+    font-weight: bold;
+
+    &:focus + .form-label,
+    &.active + .form-label {
+      top: 0;
+      font-size: .9em;
+    }
+
+    &:focus,
+    &.active {
+      border-bottom: 2px solid black;
+    }
+  }
+
+  .form-label {
+    position: absolute;
+    top: 50%;
+    left: 0.5rem;
+    transform: translateY(-30%);
+    transition: all 0.3s ease;
+    cursor: text;
+  }
+}

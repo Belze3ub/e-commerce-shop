@@ -1,0 +1,15 @@
+.signUpFormContainer {
+  /* border: 1px solid red;
+  margin-inline: auto;
+  max-width: 20rem; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  width: 380px;
+  max-width: 400px;
+}
+
+/* .signUpForm {
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
+} */

@@ -1,0 +1,41 @@
+.button {
+  padding: 1rem 2rem;
+  outline: none;
+  border: 1px solid black;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .3s;
+  min-width: 165px;
+
+  &.google-sign-in {
+    background-color: #4285f4;
+    color: white;
+    border: 1px solid #4285f4;
+
+    &:hover {
+      background-color: #2c7bfc;
+      color: white;
+    }
+  }
+
+  &.default {
+    background-color: black;
+    color: white;
+
+    &:hover {
+      background-color: white;
+      color: black;
+      border: 1px solid black;
+    }
+  }
+
+  &.inverted {
+    background-color: white;
+    color: black;
+
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}
