@@ -16,6 +16,8 @@ interface CartContextProps {
   cartCount: number;
   increaseQuantity: (cartItem: CartItem) => void;
   decreaseQuantity: (cartItem: CartItem) => void;
+  total: number;
+  setTotal: (total: number) => void;
 }
 
 export const CartContext = createContext<CartContextProps>({
@@ -28,6 +30,8 @@ export const CartContext = createContext<CartContextProps>({
   cartCount: 0,
   increaseQuantity: () => {},
   decreaseQuantity: () => {},
+  total: 0,
+  setTotal: () => {},
 });
 
 const addCartItem = (
@@ -85,21 +89,26 @@ export const CartProvider = ({ children }: Props) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
+  const [total, setTotal] = useState(0);
 
   const addItemToCart = (product: Product) => {
     setCartItems(addCartItem(cartItems, product));
+    setTotal((prevTotal: number) => prevTotal + product.price)
   };
 
   const removeItemFromCart = (cartItem: CartItem) => {
     setCartItems(removeCartItem(cartItems, cartItem));
+    setTotal((prevTotal: number) => prevTotal - (cartItem.price * cartItem.quantity));
   }
 
   const increaseQuantity = (productToIncrease: CartItem) => {
     setCartItems(increaseCartItemQuantity(cartItems, productToIncrease));
+    setTotal((prevTotal: number) => prevTotal + productToIncrease.price);
   };
 
   const decreaseQuantity = (productToDecrease: CartItem) => {
     setCartItems(decreaseCartItemQuantity(cartItems, productToDecrease));
+    setTotal((prevTotal: number) => prevTotal - productToDecrease.price);
   };
 
   useEffect(() => {
@@ -119,6 +128,8 @@ export const CartProvider = ({ children }: Props) => {
     cartCount,
     increaseQuantity,
     decreaseQuantity,
+    total,
+    setTotal,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

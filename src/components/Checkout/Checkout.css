@@ -1,12 +1,32 @@
 .checkout-container {
-  display: flex;
-  gap: 1rem;
-  flex-direction: column;
-  /* height: 100vh; */
-  justify-content: space-between;
+  display: table;
+  /* width: 70%;
+  margin-inline: auto; */
 
-  .descriptor-container {
-    display: flex;
-    justify-content: space-between;
+  .checkout-header {
+    display: table-row;
+
+    .header-block {
+      display: table-cell;
+      width: 20%;
+      border-bottom: 1px solid #626767;
+      padding: 1rem 0;
+    }
+
+    .remove {
+      width: 1%;
+    }
+
+    .image {
+      width: 10%;
+    }
   }
+}
+
+.total-price {
+  display: flex;
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  justify-content: end;
 }
