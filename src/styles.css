@@ -8,7 +8,13 @@
 
 body {
   font-family: 'Saira Condensed', sans-serif;
-  padding: 0 .5rem;
+  margin-inline: auto;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+img {
+  display: block;
 }
 
 a {
@@ -16,8 +22,19 @@ a {
   color: black;
 }
 
-/* .wrapper {
-  max-width: 1200px;
-  margin-inline: auto;
-  padding: 0 .5rem;
-} */
+*::-webkit-scrollbar {
+  width: .4rem;
+  background-color: transparent;
+  border-radius: 100rem;
+}
+
+*::-webkit-scrollbar-track {
+  /* margin-block: .2rem; */
+  margin-bottom: 1rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  margin-block: 1rem;
+  background-color: #626767;
+  border-radius: 100rem;
+}

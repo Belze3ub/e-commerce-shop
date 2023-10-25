@@ -1,0 +1,11 @@
+.cart-item-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  & img {
+    width: 4rem;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+}

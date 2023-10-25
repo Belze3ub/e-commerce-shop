@@ -1,21 +1,21 @@
 .navigation {
   display: flex;
   justify-content: space-between;
-  /* border: 1px solid red; */
   padding: 1.5rem 0;
 
   .nav-links-container {
     display: flex;
     gap: 1rem;
-    /* border: 1px solid lime; */
+    align-items: center;
   }
 
   .nav-link {
-      /* border: 1px solid blue; */
-      margin-block: auto;
+      cursor: pointer;
     }
 
   & a {
     display: flex;
   }
+
+
 }

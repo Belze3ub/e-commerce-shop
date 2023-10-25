@@ -1,13 +1,18 @@
-import './Navigation.css'
+import './Navigation.css';
 import { Link, Outlet } from 'react-router-dom';
-import logo from '../../assets/007 crown.svg'
+import logo from '../../assets/007 crown.svg';
+import UserContext from '../../contexts/UserContext';
+import { useContext } from 'react';
+import { signOutUser } from '../../utils/firebase';
+import CartIcon from '../../components/CartIcon/CartIcon';
 
 const Navigation = () => {
+  const { currentUser } = useContext(UserContext);
+
   return (
     <>
       <div className="navigation">
         <Link className="logo-container" to="/">
-          {/* <div>E-commerce-shop</div> */}
           <img src={logo} alt="Logo" />
         </Link>
         <ul className="nav-links-container">
@@ -17,14 +22,21 @@ const Navigation = () => {
           <Link className="nav-link" to="/contact">
             Contact
           </Link>
-          <Link className="nav-link" to="/auth">
-            Sign in
-          </Link>
+          {currentUser ? (
+            <span className="nav-link" onClick={signOutUser}>
+              Sign out
+            </span>
+          ) : (
+            <Link className="nav-link" to="/auth">
+              Sign in
+            </Link>
+          )}
+          <CartIcon />
         </ul>
       </div>
       <Outlet />
     </>
   );
-}
+};
 
-export default Navigation
+export default Navigation;

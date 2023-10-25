@@ -1,0 +1,19 @@
+.cart-container {
+  position: relative;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+
+  .cart-icon {
+    font-size: 2em;
+    position: relative;
+  }
+
+  .cart-count {
+    position: absolute;
+    font-size: 0.7em;
+    font-weight: bold;
+    bottom: 0.3em;
+    user-select: none;
+  }
+}
