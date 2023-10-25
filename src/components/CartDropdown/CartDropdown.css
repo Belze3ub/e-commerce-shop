@@ -12,14 +12,28 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
+  overflow: hidden;
 
   .cart-items {
+    width: 100%;
     overflow: auto;
+
+    &::-webkit-scrollbar-track {
+      margin-bottom: 1rem;
+    }
   }
-  
+
   .cart-items:has(.cart-empty) {
     height: 100%;
     display: grid;
     place-items: center;
+  }
+
+  & button {
+    width: 100%;
+  }
+
+  & a {
+    display: flex;
   }
 }

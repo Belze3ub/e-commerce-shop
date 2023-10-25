@@ -12,10 +12,4 @@
   .nav-link {
       cursor: pointer;
     }
-
-  & a {
-    display: flex;
-  }
-
-
 }

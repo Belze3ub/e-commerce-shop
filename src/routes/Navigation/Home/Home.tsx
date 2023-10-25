@@ -1,4 +1,4 @@
-import CategoriesList from "../components/CategoriesList/CategoriesList";
+import CategoriesList from '../../../components/CategoriesList/CategoriesList';
 
 const Home = () => {
   const categories = [
@@ -30,6 +30,6 @@ const Home = () => {
   ];
 
   return <CategoriesList categories={categories} />;
-}
+};
 
-export default Home
+export default Home;

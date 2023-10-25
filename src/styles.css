@@ -28,11 +28,6 @@ a {
   border-radius: 100rem;
 }
 
-*::-webkit-scrollbar-track {
-  /* margin-block: .2rem; */
-  margin-bottom: 1rem;
-}
-
 *::-webkit-scrollbar-thumb {
   margin-block: 1rem;
   background-color: #626767;
