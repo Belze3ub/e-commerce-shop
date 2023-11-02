@@ -1,6 +1,5 @@
 import { ReactNode, createContext, useState, useEffect } from 'react';
-import { createUserDocument, onAuthStateChangeListener } from '../utils/firebase';
-import { User } from 'firebase/auth';
+import { User, createUserDocument, onAuthStateChangeListener } from '../utils/firebase';
 
 interface Props {
   children: ReactNode;
@@ -8,7 +7,7 @@ interface Props {
 
 interface UserContextProps {
   currentUser: User | null;
-  setCurrentUser: (currentUser: User) => void;
+  setCurrentUser: (currentUser: User | null) => void;
 }
 
 export const UserContext = createContext<UserContextProps>({
@@ -22,7 +21,7 @@ export const UserProvider = ({ children }: Props) => {
   const value = { currentUser, setCurrentUser };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChangeListener((user: User) => {
+    const unsubscribe = onAuthStateChangeListener((user: User | null) => {
       {user && createUserDocument(user);}
       setCurrentUser(user);
     });

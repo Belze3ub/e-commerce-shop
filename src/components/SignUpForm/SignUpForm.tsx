@@ -42,12 +42,15 @@ const SignUpForm = () => {
       return;
     }
     try {
-      const { user } = await createAuthUserWithEmailAndPassword(
+      const userCredential = await createAuthUserWithEmailAndPassword(
         email,
         password
       );
-      await createUserDocument(user, { displayName });
-      resetFormFields();
+      const user = userCredential?.user;
+      if (user) {
+        await createUserDocument(user, { displayName });
+        resetFormFields();
+      }
     } catch (error) {
       if (error instanceof FirebaseError) {
         if (error.code === 'auth/email-already-in-use') {
