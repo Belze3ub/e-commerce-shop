@@ -2,7 +2,6 @@ import FormInput from '../FormInput/FormInput';
 import Button from '../Button/Button';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import {
-  createUserDocument,
   signInAuthUserWithEmailAndPassword,
   signInWithGooglePopup,
 } from '../../utils/firebase';

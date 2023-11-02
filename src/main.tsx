@@ -4,18 +4,18 @@ import App from './App.tsx';
 import { BrowserRouter } from 'react-router-dom';
 import { UserProvider } from './contexts/UserContext.jsx';
 import './styles.css';
-import { ProductProvider } from './contexts/ProductsContext.tsx';
+import { CategoriesProvider } from './contexts/CategoriesContext.tsx';
 import { CartProvider } from './contexts/CartContext.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <ProductProvider>
+        <CategoriesProvider>
           <CartProvider>
             <App />
           </CartProvider>
-        </ProductProvider>
+        </CategoriesProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>

@@ -1,4 +1,4 @@
-import { Product } from '../../contexts/ProductsContext';
+import { Product } from '../../shopData/shopData';
 import './CartItem.css';
 
 interface Props {

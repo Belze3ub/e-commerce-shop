@@ -1,10 +1,10 @@
-.categories-container {
+.directories-container {
   display: grid;
   gap: 1rem;
 }
 
 @media (min-width: 768px) {
-  .categories-container {
+  .directories-container {
     grid-template-columns: repeat(6, 1fr);
   }
 }

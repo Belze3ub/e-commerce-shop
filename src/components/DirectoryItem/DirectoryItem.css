@@ -1,4 +1,4 @@
-.category-container {
+.directory-item-container {
   overflow: hidden;
   border: 1px solid black;
   display: grid;
@@ -13,7 +13,7 @@
       transform: scale(1.1);
     }
 
-    & .category-body-container {
+    & .directory-item-body {
       opacity: 0.9;
     }
   }
@@ -27,7 +27,7 @@
     position: absolute;
   }
 
-  .category-body-container {
+  .directory-item-body {
     padding: 0.5rem 1rem;
     border: 1px solid black;
     background-color: white;
@@ -50,12 +50,12 @@
 }
 
 @media (min-width: 768px) {
-  .category-container {
+  .directory-item-container {
     grid-column: span 2;
   }
 
-  .category-container:nth-child(5n + 4),
-  .category-container:nth-child(5n + 5) {
+  .directory-item-container:nth-child(5n + 4),
+  .directory-item-container:nth-child(5n + 5) {
     grid-column: span 3;
   }
 }
